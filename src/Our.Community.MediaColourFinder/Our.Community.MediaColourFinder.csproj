@@ -32,6 +32,13 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Compile Remove="App_Plugins\Our.Community.MediaColourFinder\Models\FocalPointRectangle.cs" />
+    <Compile Remove="App_Plugins\Our.Community.MediaColourFinder\Models\ImageWithColour.cs" />
+    <Compile Remove="App_Plugins\Our.Community.MediaColourFinder\Services\ColourService.cs" />
+    <Compile Remove="App_Plugins\Our.Community.MediaColourFinder\Services\IColourService.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
     <None Include="..\..\docs\README_nuget.md">
       <Pack>True</Pack>
       <PackagePath>\</PackagePath>
