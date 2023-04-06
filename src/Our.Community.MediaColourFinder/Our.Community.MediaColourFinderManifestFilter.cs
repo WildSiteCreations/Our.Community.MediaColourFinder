@@ -2,11 +2,11 @@ using Umbraco.Cms.Core.Manifest;
 
 namespace Umbraco.Community.Our.Community.MediaColourFinder
 {
-    internal class Our.Community.MediaColourFinderManifestFilter : IManifestFilter
+    internal class MediaColourFinderManifestFilter : IManifestFilter
     {
         public void Filter(List<PackageManifest> manifests)
         {
-            var assembly = typeof(Our.Community.MediaColourFinderManifestFilter).Assembly;
+            var assembly = typeof(MediaColourFinderManifestFilter).Assembly;
 
             manifests.Add(new PackageManifest
             {
