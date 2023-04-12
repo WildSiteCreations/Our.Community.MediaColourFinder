@@ -12,6 +12,7 @@ namespace OurCommunityMediaColourFinder.Components
         private readonly IMediaTypeService _mediaTypeService;
         private readonly IShortStringHelper _shortStringHelper;
         private readonly IDataTypeService _dataTypeService;
+        private readonly ILogg
 
         public MediaComponent(IMediaTypeService mediaTypeService, IShortStringHelper shortStringHelper, IDataTypeService dataTypeService)
         {
@@ -22,27 +23,36 @@ namespace OurCommunityMediaColourFinder.Components
 
         public void Initialize()
         {
-            // Get the media type you want to modify
-            var mediaType = _mediaTypeService.Get("Image");
-            var colorPickerDataType = _dataTypeService.GetByEditorAlias("Umbraco.TextBox").First();
 
-            var propertyType = new PropertyType(_shortStringHelper, colorPickerDataType)
+            try
             {
-                Name = "Color",
-                Alias = "colourFound",
-                Description = "Property Description",
+                var mediaType = _mediaTypeService.Get("Image");
+                var colorPickerDataType = _dataTypeService.GetByEditorAlias("Umbraco.TextBox").First();
+
+                var propertyType = new PropertyType(_shortStringHelper, colorPickerDataType)
+                {
+                    Name = "Color",
+                    Alias = "colourFound",
+                    Description = "Property Description",
+
+
+                    Mandatory = false
+
+
+                };
+
+
+                mediaType.AddPropertyType(propertyType, "image");
+
+                // Save the changes to the database
+                _mediaTypeService.Save(mediaType);
+            }
+            catch(Exception ex)
+            {
                 
-                
-                Mandatory = false
-                
-
-            };
-
-
-            mediaType.AddPropertyType(propertyType);
-
-            // Save the changes to the database
-            _mediaTypeService.Save(mediaType);
+            }
+            // Get the media type you want to modify
+          
         }
 
         public void Terminate() { }
