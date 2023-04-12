@@ -5,6 +5,7 @@ using Umbraco.Cms.Core.PropertyEditors;
 using Umbraco.Cms.Core.Services;
 using Umbraco.Cms.Core.Strings;
 
+
 namespace OurCommunityMediaColourFinder.Components
 {
     public class MediaComponent : IComponent
@@ -12,13 +13,14 @@ namespace OurCommunityMediaColourFinder.Components
         private readonly IMediaTypeService _mediaTypeService;
         private readonly IShortStringHelper _shortStringHelper;
         private readonly IDataTypeService _dataTypeService;
-        private readonly ILogg
+        private readonly ILogger<MediaComponent> _logger;
 
-        public MediaComponent(IMediaTypeService mediaTypeService, IShortStringHelper shortStringHelper, IDataTypeService dataTypeService)
+        public MediaComponent(IMediaTypeService mediaTypeService, IShortStringHelper shortStringHelper, IDataTypeService dataTypeService, ILogger<MediaComponent> logger)
         {
             _mediaTypeService = mediaTypeService;
             _shortStringHelper = shortStringHelper;
             _dataTypeService = dataTypeService;
+            _logger = logger;
         }
 
         public void Initialize()
@@ -31,11 +33,9 @@ namespace OurCommunityMediaColourFinder.Components
 
                 var propertyType = new PropertyType(_shortStringHelper, colorPickerDataType)
                 {
-                    Name = "Color",
-                    Alias = "colourFound",
-                    Description = "Property Description",
-
-
+                    Name = "Brightest Colour Found",
+                    Alias = "brightestColourFound",
+                    Description = "This is the brightest colour found within the focal area of this image",
                     Mandatory = false
 
 
@@ -47,12 +47,12 @@ namespace OurCommunityMediaColourFinder.Components
                 // Save the changes to the database
                 _mediaTypeService.Save(mediaType);
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
-                
+                _logger.LogError("Error within Media Component", ex);
             }
-            // Get the media type you want to modify
-          
+
+
         }
 
         public void Terminate() { }
