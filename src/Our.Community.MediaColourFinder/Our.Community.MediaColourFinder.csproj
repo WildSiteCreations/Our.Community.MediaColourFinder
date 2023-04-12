@@ -32,10 +32,21 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Compile Remove="App_Plugins\Our.Community.MediaColourFinder\Components\MediaComponent.cs" />
     <Compile Remove="App_Plugins\Our.Community.MediaColourFinder\Models\FocalPointRectangle.cs" />
     <Compile Remove="App_Plugins\Our.Community.MediaColourFinder\Models\ImageWithColour.cs" />
+    <Compile Remove="App_Plugins\Our.Community.MediaColourFinder\Services\AddPropertyToMediaTypeComponent.cs" />
     <Compile Remove="App_Plugins\Our.Community.MediaColourFinder\Services\ColourService.cs" />
     <Compile Remove="App_Plugins\Our.Community.MediaColourFinder\Services\IColourService.cs" />
+    <Compile Remove="App_Plugins\Our.Community.MediaColourFinder\Startup\StartupComposer.cs" />
+    <Compile Remove="App_Plugins\Our.Community.MediaColourFinder\Startup\UmbracoBuilderExtensions.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Remove="App_Plugins\Our.Community.MediaColourFinder\MediaColourFinder.css" />
+    <None Remove="App_Plugins\Our.Community.MediaColourFinder\mediaColourFinder.js" />
+    <None Remove="App_Plugins\Our.Community.MediaColourFinder\mediaColourFinders.html" />
+    <None Remove="App_Plugins\Our.Community.MediaColourFinder\package.manifest" />
   </ItemGroup>
 
   <ItemGroup>

@@ -1,4 +1,4 @@
-namespace MediaColourFinder.Models;
+namespace OurCommunityMediaColourFinder.Models;
 
 public class ImageWithColour
 {

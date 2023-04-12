@@ -4,6 +4,25 @@
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
   </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="App_Plugins\Our.Community.MediaColourFinder\Components\AddPropertyToMediaTypeComponent.cs" />
+    <Compile Include="App_Plugins\Our.Community.MediaColourFinder\Components\MediaComponent.cs" />
+    <Compile Include="App_Plugins\Our.Community.MediaColourFinder\Models\FocalPointRectangle.cs" />
+    <Compile Include="App_Plugins\Our.Community.MediaColourFinder\Models\ImageWithColour.cs" />
+    <Compile Include="App_Plugins\Our.Community.MediaColourFinder\Services\ColourService.cs" />
+    <Compile Include="App_Plugins\Our.Community.MediaColourFinder\Services\IColourService.cs" />
+    <Compile Include="App_Plugins\Our.Community.MediaColourFinder\Startup\StartupComposer.cs" />
+    <Compile Include="App_Plugins\Our.Community.MediaColourFinder\Startup\UmbracoBuilderExtensions.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="App_Plugins\Our.Community.MediaColourFinder\lang\en.xml" />
+    <Content Include="App_Plugins\Our.Community.MediaColourFinder\mediaColourFinder.css" />
+    <Content Include="App_Plugins\Our.Community.MediaColourFinder\mediaColourFinders.html" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App_Plugins\Our.Community.MediaColourFinder\mediaColourFinder.js" />
+    <None Include="App_Plugins\Our.Community.MediaColourFinder\package.manifest" />
+  </ItemGroup>
 
   <ItemGroup>
     <PackageReference Include="Umbraco.Cms" Version="10.4.0" />

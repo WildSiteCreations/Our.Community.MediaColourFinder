@@ -1,6 +1,6 @@
-using MediaColourFinder.Models;
+using OurCommunityMediaColourFinder.Models;
 
-namespace MediaColourFinder.Services;
+namespace OurCommunityMediaColourFinder.Services;
 
 public interface IColourService
 {

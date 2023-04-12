@@ -1,0 +1,28 @@
+{
+    // we can define multiple editors
+    "propertyEditors": [
+        {
+            /*this must be a unique alias*/
+            "alias": "Media Colour Finder",
+            /*the name*/
+            "name": "Media Colour Finder",
+            /*the icon*/
+            "icon": "icon-list",
+            /*grouping for "Select editor" dialog*/
+            "group": "Common",
+            /*the HTML file we will load for the editor*/
+            "editor": {
+                "view": "~/App_Plugins/Our.Community.MediaColourFinder/mediaColourFinder.html",
+                /*Optional: Add 'read-only' support. Available from Umbraco 10.2+*/
+                "supportsReadOnly": true
+            }
+        }
+    ],
+     // array of files we want to inject into the application on app_start
+    "css": [
+        "~/App_Plugins/Our.Community.MediaColourFinder/mediaColourFinder.css"
+    ],
+    "javascript": [
+        "~/App_Plugins/Our.Community.MediaColourFinder/mediaColourFinder.controller.js"
+    ]
+}

@@ -1,6 +1,6 @@
 using SixLabors.ImageSharp;
 
-namespace MediaColourFinder.Models;
+namespace OurCommunityMediaColourFinder.Models;
 
 public class FocalPointRectangle
 {

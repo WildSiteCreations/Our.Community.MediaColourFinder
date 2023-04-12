@@ -1,9 +1,9 @@
-using MediaColourFinder.Models;
+using OurCommunityMediaColourFinder.Models;
 using SixLabors.ImageSharp.PixelFormats;
 using SixLabors.ImageSharp.Processing;
 using Image = SixLabors.ImageSharp.Image;
 
-namespace MediaColourFinder.Services;
+namespace OurCommunityMediaColourFinder.Services;
 
 public class ColourService : IColourService
 {
