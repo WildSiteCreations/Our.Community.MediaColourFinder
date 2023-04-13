@@ -29,11 +29,14 @@ public class MediaComponent : IComponent
         try
         {
             IMediaType? mediaType = _mediaTypeService.Get("Image");
-            IDataType colorPickerDataType = _dataTypeService.GetByEditorAlias("Umbraco.TextBox").First();
-
+         
             var colorPicker =  _dataTypeService
                 .GetByEditorAlias(Umbraco.Cms.Core.Constants.PropertyEditors.Aliases.ColorPickerEyeDropper)
-                .First();
+                .FirstOrDefault();
+
+
+            //TODO: If colorpicker is null - create one
+
 
             PropertyType propertyType = new(_shortStringHelper, colorPicker)
             {
