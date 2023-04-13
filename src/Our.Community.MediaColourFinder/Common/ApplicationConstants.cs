@@ -2,7 +2,5 @@
 
 public static class ApplicationConstants
 {
-    public const string BrightestColourFoundPropertyAlias = "brightestColourFound";
-    public const string WhiteOrBlackPropertyAlias = "whiteOrBlack";
-    public const string OppositeColourPropertyAlias = "oppositeColour";
+    public const string PropertyTypeAlias = "wsc.mediaColourFinder";
 }

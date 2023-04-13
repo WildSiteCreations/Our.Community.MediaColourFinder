@@ -28,13 +28,6 @@
 
   <ItemGroup>
     <Content Include="App_Plugins\Our.Community.MediaColourFinder\**" ExcludeFromSingleFile="true" CopyToPublishDirectory="Always" />
-    <Content Include="Components\MediaComponent.cs" />
-    <Content Include="Interfaces\IColourService.cs" />
-    <Content Include="Models\FocalPointRectangle.cs" />
-    <Content Include="Models\ImageWithColour.cs" />
-    <Content Include="Services\ColourService.cs" />
-    <Content Include="Startup\StartupComposer.cs" />
-    <Content Include="Startup\UmbracoBuilderExtensions.cs" />
     <None Include="buildTransitive\**" Pack="true" PackagePath="buildTransitive" />
   </ItemGroup>
 

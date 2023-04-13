@@ -1,6 +1,5 @@
 using Umbraco.Cms.Core.Composing;
 using Umbraco.Cms.Core.DependencyInjection;
-using OurCommunityMediaColourFinder.Components;
 
 
 namespace OurCommunityMediaColourFinder.Startup
@@ -10,7 +9,6 @@ namespace OurCommunityMediaColourFinder.Startup
         public void Compose(IUmbracoBuilder builder)
         {
             builder.SetupMediaColourFinder();
-            builder.Components().Append<MediaComponent>();
          }
     }
 }

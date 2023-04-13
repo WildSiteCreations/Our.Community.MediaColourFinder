@@ -1,0 +1,22 @@
+<div class="wsc-mediaColourFinder" ng-controller="wsc.mediaColourFinderController as vm">
+  <div class="wsc-mediaColourFinder--title">
+    <p ng-show="model.value == ''">This property will auto-populate when the media item is saved.</p>   
+  </div>
+  <div class="wsc-mediaColourFinder--colours" ng-hide="model.value == ''">
+    <div class="colourSample">
+      <p>Average</p>
+       <div class="patch" style="background-color: {{model.value.Average}};"></div>
+       <div>{{model.value.Average}}</div>
+    </div>
+    <div class="colourSample">
+      <p>Brightest</p>
+      <div class="patch" style="background-color: {{model.value.BrightestContrast}};"></div>
+      <div>{{model.value.BrightestContrast}}</div>
+    </div>
+    <div class="colourSample">
+      <p>Opposite</p>
+      <div class="patch" style="background-color: {{model.value.Opposite}};"></div>
+      <div>{{model.value.Opposite}}</div>
+    </div>
+  </div>
+</div>

@@ -1,6 +1,13 @@
-.suggestion {
-  cursor: pointer;
-  text-align: left;
-  font-size: 20px;
-  color: Highlight;
+.wsc-mediaColourFinder .patch{
+  width: 100px;
+  height: 100px;
+  margin: 10px;
+  -webkit-box-shadow: 4px 4px 5px 0px rgba(0,0,0,0.32);
+  -moz-box-shadow: 4px 4px 5px 0px rgba(0,0,0,0.32);
+  box-shadow: 4px 4px 5px 0px rgba(0,0,0,0.32);
+}
+
+.wsc-mediaColourFinder--colours{
+  display: flex;
+  gap: 35px;
 }
