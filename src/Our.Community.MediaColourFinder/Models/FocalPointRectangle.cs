@@ -13,6 +13,9 @@ public class FocalPointRectangle
     public int Height { get; set; }
     public string? Image { get; set; }
 
+    // TODO: Remove this
+    public Stream Stream { get; set; }
+
     /// <summary>
     /// We calculate the rectangle based on the focal point and the image size.
     /// </summary>
