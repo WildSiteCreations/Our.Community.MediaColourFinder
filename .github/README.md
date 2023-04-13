@@ -1,8 +1,10 @@
 # Our.Community.MediaColourFinder
+![color-circle](https://user-images.githubusercontent.com/9438758/231746579-fe2530c0-d946-4e71-b74c-64fee679b106.png)
 
 [![Downloads](https://img.shields.io/nuget/dt/Umbraco.Community.Our.Community.MediaColourFinder?color=cc9900)](https://www.nuget.org/packages/Umbraco.Community.Our.Community.MediaColourFinder/)
 [![NuGet](https://img.shields.io/nuget/vpre/Umbraco.Community.Our.Community.MediaColourFinder?color=0273B3)](https://www.nuget.org/packages/Umbraco.Community.Our.Community.MediaColourFinder)
 [![GitHub license](https://img.shields.io/github/license/WildSiteCreation/Our.Community.MediaColourFinder?color=8AB803)](LICENSE)
+
 
 TODO: describe your package
 
@@ -28,4 +30,4 @@ Contributions to this package are most welcome! Please read the [Contributing Gu
 
 ## Acknowledgments
 
-TODO
+<a href="https://www.flaticon.com/free-icons/color" title="color icons">Color icons created by Nikita Golubev - Flaticon</a>
