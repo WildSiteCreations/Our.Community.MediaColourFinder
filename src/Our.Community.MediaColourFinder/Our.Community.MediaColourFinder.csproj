@@ -4,12 +4,12 @@
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
     <ContentTargetFolders>.</ContentTargetFolders>
-    <Product>Umbraco.Community.Our.Community.MediaColourFinder</Product>
-    <PackageId>Umbraco.Community.Our.Community.MediaColourFinder</PackageId>
+    <Product>Umbraco.Community.MediaColourFinder</Product>
+    <PackageId>Umbraco.Community.OMediaColourFinder</PackageId>
     <Title>Our.Community.MediaColourFinder</Title>
     <Description>...</Description>
     <PackageTags>umbraco;umbraco-marketplace</PackageTags>
-    <RootNamespace>Umbraco.Community.Our.Community.MediaColourFinder</RootNamespace>
+    <RootNamespace>Umbraco.Community.MediaColourFinder</RootNamespace>
     <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
     <Version>0.1.0</Version>
     <Authors>Owain Williams and Sean Thorne</Authors>
@@ -28,18 +28,14 @@
 
   <ItemGroup>
     <Content Include="App_Plugins\Our.Community.MediaColourFinder\**" ExcludeFromSingleFile="true" CopyToPublishDirectory="Always" />
+    <Content Include="Components\MediaComponent.cs" />
+    <Content Include="Interfaces\IColourService.cs" />
+    <Content Include="Models\FocalPointRectangle.cs" />
+    <Content Include="Models\ImageWithColour.cs" />
+    <Content Include="Services\ColourService.cs" />
+    <Content Include="Startup\StartupComposer.cs" />
+    <Content Include="Startup\UmbracoBuilderExtensions.cs" />
     <None Include="buildTransitive\**" Pack="true" PackagePath="buildTransitive" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Compile Remove="App_Plugins\Our.Community.MediaColourFinder\Components\MediaComponent.cs" />
-    <Compile Remove="App_Plugins\Our.Community.MediaColourFinder\Models\FocalPointRectangle.cs" />
-    <Compile Remove="App_Plugins\Our.Community.MediaColourFinder\Models\ImageWithColour.cs" />
-    <Compile Remove="App_Plugins\Our.Community.MediaColourFinder\Services\AddPropertyToMediaTypeComponent.cs" />
-    <Compile Remove="App_Plugins\Our.Community.MediaColourFinder\Services\ColourService.cs" />
-    <Compile Remove="App_Plugins\Our.Community.MediaColourFinder\Services\IColourService.cs" />
-    <Compile Remove="App_Plugins\Our.Community.MediaColourFinder\Startup\StartupComposer.cs" />
-    <Compile Remove="App_Plugins\Our.Community.MediaColourFinder\Startup\UmbracoBuilderExtensions.cs" />
   </ItemGroup>
 
   <ItemGroup>
