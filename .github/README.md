@@ -1,5 +1,5 @@
 # Our.Community.MediaColourFinder
-![color-circle](https://user-images.githubusercontent.com/9438758/231746579-fe2530c0-d946-4e71-b74c-64fee679b106.png)
+![color-circle](assets/mediaColourFinder.png)
 
 [![Downloads](https://img.shields.io/nuget/dt/Umbraco.Community.Our.Community.MediaColourFinder?color=cc9900)](https://www.nuget.org/packages/Umbraco.Community.Our.Community.MediaColourFinder/)
 [![NuGet](https://img.shields.io/nuget/vpre/Umbraco.Community.Our.Community.MediaColourFinder?color=0273B3)](https://www.nuget.org/packages/Umbraco.Community.Our.Community.MediaColourFinder)
