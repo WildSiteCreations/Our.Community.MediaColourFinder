@@ -78,9 +78,19 @@ public class ColourSamplingMediaHandler : INotificationHandler<MediaSavingNotifi
             Height = media.GetValue<int>(Cms.Core.Constants.Conventions.Media.Height),
             Width = media.GetValue<int>(Cms.Core.Constants.Conventions.Media.Width),
             Stream = stream,
-            Left = (decimal)imageDataProxy.FocalPoint.Left,
-            Top = (decimal)imageDataProxy.FocalPoint.Top
         };
+        if (imageDataProxy.FocalPoint != null)
+        {
+            focalPoints.Left = (decimal)imageDataProxy.FocalPoint.Left;
+            focalPoints.Top = (decimal)imageDataProxy.FocalPoint.Top;
+        }
+        else
+        {
+            // no focal points have been set, this can happen when a user first uploads.
+            // That's okay, it's always defaulting to these values anyway.
+            focalPoints.Left = 0.5m;
+            focalPoints.Top = 0.5m;
+        }
 
         return _colourService.GetImageWithColour(focalPoints);
     }

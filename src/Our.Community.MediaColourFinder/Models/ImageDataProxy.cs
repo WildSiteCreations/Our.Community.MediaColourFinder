@@ -8,7 +8,7 @@ public class ImageDataProxy
     public string Source { get; set; }
 
     [JsonProperty("focalPoint")]
-    public FocalPoint FocalPoint { get; set; }
+    public FocalPoint? FocalPoint { get; set; }
 }
 
 public class FocalPoint
