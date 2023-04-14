@@ -1,12 +1,12 @@
 ﻿using Microsoft.Extensions.Logging;
+using Newtonsoft.Json;
 using OurCommunityMediaColourFinder.Interfaces;
 using OurCommunityMediaColourFinder.Models;
 using Umbraco.Cms.Core.Events;
 using Umbraco.Cms.Core.IO;
 using Umbraco.Cms.Core.Models;
 using Umbraco.Cms.Core.Notifications;
-using Umbraco.Cms.Core.PropertyEditors;
-using Umbraco.Community.MediaColourFinder.Common;
+using Umbraco.Community.MediaColourFinder.Models;
 using Umbraco.Extensions;
 
 namespace Umbraco.Community.Our.Community.MediaColourFinder.Handlers;
@@ -21,7 +21,8 @@ public class ColourSamplingMediaHandler : INotificationHandler<MediaSavingNotifi
     private readonly IColourService _colourService;
     private readonly MediaFileManager _mediaFileManager;
 
-    public ColourSamplingMediaHandler(ILogger<ColourSamplingMediaHandler> logger, IColourService colourService, MediaFileManager mediaFileManager)
+    public ColourSamplingMediaHandler(ILogger<ColourSamplingMediaHandler> logger, IColourService colourService,
+        MediaFileManager mediaFileManager)
     {
         _logger = logger;
         _colourService = colourService;
@@ -32,17 +33,26 @@ public class ColourSamplingMediaHandler : INotificationHandler<MediaSavingNotifi
     {
         foreach (IMedia media in notification.SavedEntities)
         {
-            var properties = media.GetPropertiesByEditor("wsc.mediaColourFinder");
-            
-            if(properties == null || !properties.Any()) continue;
+            IEnumerable<IProperty> properties = media
+                .GetPropertiesByEditor("wsc.mediaColourFinder")
+                .ToList(); // ToList() is important here, otherwise the enumeration will be executed multiple times
 
-            ImageWithColour? brightestColour = await ExtractColoursAsync(media) ;
+            if (!properties.Any())
+            {
+                continue;
+            }
 
-            if (brightestColour is null) continue;
+            ImageWithColour? imagesWithColour = await ExtractColoursAsync(media);
 
-            foreach(var property in properties)
-                TrySetProperty(media, property.Alias, System.Text.Json.JsonSerializer.Serialize(brightestColour));
+            if (imagesWithColour is null)
+            {
+                continue;
+            }
 
+            foreach (IProperty property in properties)
+            {
+                media.SetValue(property.Alias, System.Text.Json.JsonSerializer.Serialize(imagesWithColour));
+            }
         }
     }
 
@@ -50,27 +60,28 @@ public class ColourSamplingMediaHandler : INotificationHandler<MediaSavingNotifi
     {
         await using Stream stream = _mediaFileManager.GetFile(media, out _);
 
-        FocalPointRectangle focalPoints = new FocalPointRectangle
+        var mediaWithCrops = media.GetValue("umbracoFile")?.ToString();
+        if (mediaWithCrops == null)
         {
-            Height = media.GetValue<int>(Umbraco.Cms.Core.Constants.Conventions.Media.Height),
-            Width = media.GetValue<int>(Umbraco.Cms.Core.Constants.Conventions.Media.Width),
-            Stream = stream
+            return null;
+        }
+
+        ImageDataProxy? imageDataProxy = JsonConvert.DeserializeObject<ImageDataProxy>(mediaWithCrops);
+
+        if (imageDataProxy == null)
+        {
+            return null;
+        }
+
+        FocalPointRectangle focalPoints = new()
+        {
+            Height = media.GetValue<int>(Cms.Core.Constants.Conventions.Media.Height),
+            Width = media.GetValue<int>(Cms.Core.Constants.Conventions.Media.Width),
+            Stream = stream,
+            Left = (decimal)imageDataProxy.FocalPoint.Left,
+            Top = (decimal)imageDataProxy.FocalPoint.Top
         };
 
-        // TODO: We need to get this dynamically from local or from global crops!
-        var x = 0.5m;
-        var y = 0.5m;
-
-        focalPoints.Left = x;
-        focalPoints.Top = y;
-
-        return await _colourService.GetImageWithColour(focalPoints);
-    }
-
-    private static void TrySetProperty(IMedia media, string propertyAlias, object value)
-    {
-        media.SetValue(propertyAlias, value);
-        
+        return _colourService.GetImageWithColour(focalPoints);
     }
 }
-
