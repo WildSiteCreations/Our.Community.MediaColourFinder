@@ -11,9 +11,7 @@ public class FocalPointRectangle
     public int Width { get; set; }
 
     public int Height { get; set; }
-    public string? Image { get; set; }
 
-    // TODO: Remove this
     public Stream Stream { get; set; }
 
     /// <summary>
