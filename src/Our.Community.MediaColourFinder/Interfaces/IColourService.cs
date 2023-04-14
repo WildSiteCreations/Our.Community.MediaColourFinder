@@ -4,6 +4,6 @@ namespace OurCommunityMediaColourFinder.Interfaces;
 
 public interface IColourService
 {
-    Task<IEnumerable<ImageWithColour>> GetImagesWithColour(IEnumerable<FocalPointRectangle> imageFiles);
-    Task<ImageWithColour?> GetImageWithColour(FocalPointRectangle focalPointRectangle);
+    IEnumerable<ImageWithColour> GetImagesWithColour(IEnumerable<FocalPointRectangle> imageFiles);
+    ImageWithColour? GetImageWithColour(FocalPointRectangle focalPointRectangle);
 }
