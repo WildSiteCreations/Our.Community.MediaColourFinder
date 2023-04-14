@@ -4,7 +4,7 @@
         {
             "alias": "wsc.mediaColourFinder",
             "name": "Media Colour Finder",
-            "icon": "icon-list",
+            "icon": "color-circle",
             "group": "Common",
             "editor": {
                 "view": "~/App_Plugins/Our.Community.MediaColourFinder/mediaColourFinder.html",

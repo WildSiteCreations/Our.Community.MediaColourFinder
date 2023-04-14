@@ -4,6 +4,15 @@
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
   </PropertyGroup>
+  <ItemGroup>
+    <Content Include="App_Plugins\Our.Community.MediaColourFinder\lang\en.xml" />
+    <Content Include="App_Plugins\Our.Community.MediaColourFinder\mediaColourFinder.css" />
+    <Content Include="App_Plugins\Our.Community.MediaColourFinder\mediaColourFinder.html" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App_Plugins\Our.Community.MediaColourFinder\mediaColourFinder.js" />
+    <None Include="App_Plugins\Our.Community.MediaColourFinder\package.manifest" />
+  </ItemGroup>
 
   <ItemGroup>
     <PackageReference Include="Umbraco.Cms" Version="10.4.0" />
