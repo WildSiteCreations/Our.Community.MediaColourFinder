@@ -144,7 +144,7 @@ public class ColourService : IColourService
         var b = Convert.ToInt32(hexValue.Substring(4, 2), 16);
         if (isBlackAndWhite)
         {
-            return GetBlackOrWhiteBasedOnPerceivedBrightness(r, g, b);
+            return GetBlackOrWhiteBasedOnContrastRatio(r, g, b);
         }
 
         // invert color components
@@ -161,12 +161,41 @@ public class ColourService : IColourService
         return "#" + PadZero(hexR) + PadZero(hexG) + PadZero(hexB);
     }
 
-    // https://stackoverflow.com/a/3943023/112731
-    private static string GetBlackOrWhiteBasedOnPerceivedBrightness(int r, int g, int b)
+    /// <summary>
+    /// Get the correct color for text based on the contrast ratio between the background color and white or black.
+    /// https://www.w3.org/TR/WCAG20/#:~:text=(L1%20%2B%200.05)%20/%20(L2%20%2B%200.05)%2C%20where
+    /// </summary>
+    private static string GetBlackOrWhiteBasedOnContrastRatio(int r, int g, int b)
     {
-        var brightness = (r * 0.299) + (g * 0.587) + (b * 0.114);
+        // TODO: We can probably make this customisable to be not black or white, but inserted brand colours.
+        var contrastWithWhite = GetContrastRatio(r, g, b, 255, 255, 255);
+        var contrastWithBlack = GetContrastRatio(r, g, b, 0, 0, 0);
 
-        return brightness > 186 ? "#000000" : "#FFFFFF";
+        return contrastWithWhite > contrastWithBlack ? "#FFFFFF" : "#000000";
+    }
+
+    private static double GetContrastRatio(int r1, int g1, int b1, int r2, int g2, int b2)
+    {
+        var luminance1 = GetLuminance(r1, g1, b1);
+        var luminance2 = GetLuminance(r2, g2, b2);
+
+        var lightest = Math.Max(luminance1, luminance2);
+        var darkest = Math.Min(luminance1, luminance2);
+
+        return (lightest + 0.05) / (darkest + 0.05);
+    }
+
+    private static double GetLuminance(int r, int g, int b)
+    {
+        var sR = r / 255.0;
+        var sG = g / 255.0;
+        var sB = b / 255.0;
+
+        sR = sR <= 0.03928 ? sR / 12.92 : Math.Pow((sR + 0.055) / 1.055, 2.4);
+        sG = sG <= 0.03928 ? sG / 12.92 : Math.Pow((sG + 0.055) / 1.055, 2.4);
+        sB = sB <= 0.03928 ? sB / 12.92 : Math.Pow((sB + 0.055) / 1.055, 2.4);
+
+        return (0.2126 * sR) + (0.7152 * sG) + (0.0722 * sB);
     }
 
     private static string PadZero(string str, int len = 2)

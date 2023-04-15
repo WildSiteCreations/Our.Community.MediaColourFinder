@@ -11,9 +11,7 @@ public class FocalPointRectangle
     public int Width { get; set; }
 
     public int Height { get; set; }
-    public string? Image { get; set; }
 
-    // TODO: Remove this
     public Stream Stream { get; set; }
 
     /// <summary>
@@ -24,6 +22,18 @@ public class FocalPointRectangle
         var rectangleSize = 20; // This can probably be adjusted to be something a little bit nicer.
         var x = (int) (Left * Width);
         var y = (int) (Top * Height);
+
+        // If the rectangle is too close to the edge, we need to adjust it so it's not off the image.
+        if (x + rectangleSize > Width)
+        {
+            x = Width - rectangleSize;
+        }
+
+        if (y + rectangleSize > Height)
+        {
+            y = Height - rectangleSize;
+        }
+
         return new Rectangle(x, y, rectangleSize, rectangleSize);
     }
 }
