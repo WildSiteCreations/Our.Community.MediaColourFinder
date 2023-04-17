@@ -5,13 +5,15 @@
     <Nullable>enable</Nullable>
     <ContentTargetFolders>.</ContentTargetFolders>
     <Product>Umbraco.Community.MediaColourFinder</Product>
-    <PackageId>Umbraco.Community.OMediaColourFinder</PackageId>
+    <PackageId>Umbraco.Community.MediaColourFinder</PackageId>
     <Title>Our.Community.MediaColourFinder</Title>
-    <Description>...</Description>
-    <PackageTags>umbraco;umbraco-marketplace</PackageTags>
+    <Description>With this Umbraco CMS package, you can now add a new custom property editor to your uploaded images. This feature enables you to use the focal point of an image to obtain its brightest color, average color, and opposite color to the brightest.
+
+You can then use these colours in your website build to enhance your designs.</Description>
+    <PackageTags>umbraco;umbraco-marketplace;colour-finder;</PackageTags>
     <RootNamespace>Umbraco.Community.MediaColourFinder</RootNamespace>
     <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
-    <Version>0.1.0</Version>
+    <Version>0.1.0-beta</Version>
     <Authors>Owain Williams and Sean Thorne</Authors>
     <Copyright>2023 © Owain Williams and Sean Thorne</Copyright>
     <PackageProjectUrl>https://github.com/WildSiteCreation/Our.Community.MediaColourFinder</PackageProjectUrl>
@@ -19,6 +21,8 @@
     <PackageReadmeFile>README_nuget.md</PackageReadmeFile>
     <RepositoryType>git</RepositoryType>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <PackageIcon>mediaColourFinder.png</PackageIcon>
+    <PackageRequireLicenseAcceptance>True</PackageRequireLicenseAcceptance>
   </PropertyGroup>
 
   <ItemGroup>
@@ -40,6 +44,10 @@
   </ItemGroup>
 
   <ItemGroup>
+    <None Include="..\..\.github\assets\mediaColourFinder.png">
+      <Pack>True</Pack>
+      <PackagePath>\</PackagePath>
+    </None>
     <None Include="..\..\docs\README_nuget.md">
       <Pack>True</Pack>
       <PackagePath>\</PackagePath>
