@@ -10,16 +10,16 @@
     var image = Model.BannerImage.Content as Image;
     if(image != null)
     {
-         <div style="height: 200px; width: 200px; background-color: @image.Colours.Brightest.ToString(); padding: 10px; margin-bottom: 10px;">
-                <span style="color: @image.Colours.TextColour">Brightest Background colour with Text Colour</span>
+         <div style="height: 200px; width: 200px; background-color: @image.Colours?.Brightest.ToString(); padding: 10px; margin-bottom: 10px;">
+                <span style="color: @image.Colours?.TextColour">Brightest Background colour with Text Colour</span>
          </div>
 
-            <div style="height: 200px; width: 200px; background-color: @image.Colours.Average.ToString(); padding: 10px; margin-bottom: 10px;">
-                <span style="color: @image.Colours.TextColour">Average Background colour with Text Colour</span>
+            <div style="height: 200px; width: 200px; background-color: @image.Colours?.Average.ToString(); padding: 10px; margin-bottom: 10px;">
+                <span style="color: @image.Colours?.TextColour">Average Background colour with Text Colour</span>
             </div>
 
-            <div style="height: 200px; width: 200px; background-color: @image.Colours.Opposite.ToString(); padding: 10px;">
-                <span style="color: @image.Colours.TextColour">Opposite Background colour with Text Colour</span>
+            <div style="height: 200px; width: 200px; background-color: @image.Colours?.Opposite.ToString(); padding: 10px;">
+                <span style="color: @image.Colours?.TextColour">Opposite Background colour with Text Colour</span>
             </div>
     }
    

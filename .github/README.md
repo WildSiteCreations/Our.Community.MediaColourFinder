@@ -10,6 +10,9 @@ With this Umbraco CMS package, you can now add a new custom property editor to y
 
 You can then use these colours in your website build to enhance your designs.
 
+![Media-Color-Finder-Demo](assets/mediaColourFinder.gif)
+
+
 <!--
 Including screenshots is a really good idea! 
 
@@ -24,7 +27,7 @@ Add the package to an existing Umbraco website (v10.4+) from nuget:
 
 `dotnet add package Umbraco.Community.Our.Community.MediaColourFinder`
 
-TODO *provide any other instructions for someone using your package*
+* Once you have the package installed, you need to add the Media Colour Finder property to your Image media type.
 
 ## Contributing
 
