@@ -5,6 +5,7 @@ using OurCommunityMediaColourFinder.Interfaces;
 using OurCommunityMediaColourFinder.Services;
 using Umbraco.Community.Our.Community.MediaColourFinder.Handlers;
 using OurCommunityMediaColourFinder.PropertyValueConverters;
+using Umbraco.Community.MediaColourFinder.Manifest;
 
 namespace OurCommunityMediaColourFinder.Startup
 {
@@ -15,7 +16,8 @@ namespace OurCommunityMediaColourFinder.Startup
             builder.Services.AddUnique<IColourService, ColourService>();
 
             builder.AddNotificationHandler<MediaSavingNotification, ColourSamplingMediaHandler>();
-            builder.PropertyValueConverters().Append<MediaColourFinderValueConverter>();
+            builder.ManifestFilters().Append<MediaColourFinderManifestFilter>();
+           
 
             return builder;
         }
