@@ -52,7 +52,6 @@ You can then use these colours in your website build to enhance your designs.</D
     <None Include="wwwroot\App_Plugins\Our.Community.MediaColourFinder\mediaColourFinder.css" />
     <None Include="wwwroot\App_Plugins\Our.Community.MediaColourFinder\mediaColourFinder.html" />
     <None Include="wwwroot\App_Plugins\Our.Community.MediaColourFinder\mediaColourFinder.js" />
-    <None Include="wwwroot\App_Plugins\Our.Community.MediaColourFinder\package.manifest_old" />
   </ItemGroup>
 
 </Project>
