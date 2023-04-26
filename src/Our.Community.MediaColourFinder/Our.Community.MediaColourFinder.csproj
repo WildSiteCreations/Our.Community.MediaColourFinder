@@ -1,8 +1,9 @@
-<Project Sdk="Microsoft.NET.Sdk">
+<Project Sdk="Microsoft.NET.Sdk.Razor">
   <PropertyGroup>
     <TargetFramework>net6.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
+    <StaticWebAssetBasePath>/</StaticWebAssetBasePath>
     <ContentTargetFolders>.</ContentTargetFolders>
     <Product>Umbraco.Community.MediaColourFinder</Product>
     <PackageId>Umbraco.Community.MediaColourFinder</PackageId>
@@ -13,11 +14,11 @@ You can then use these colours in your website build to enhance your designs.</D
     <PackageTags>umbraco;umbraco-marketplace;colour-finder;</PackageTags>
     <RootNamespace>Umbraco.Community.MediaColourFinder</RootNamespace>
     <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
-    <Version>0.1.0-beta</Version>
+    <Version>0.2.1-beta</Version>
     <Authors>Owain Williams and Sean Thorne</Authors>
     <Copyright>2023 © Owain Williams and Sean Thorne</Copyright>
-    <PackageProjectUrl>https://github.com/WildSiteCreation/Our.Community.MediaColourFinder</PackageProjectUrl>
-    <RepositoryUrl>https://github.com/WildSiteCreation/Our.Community.MediaColourFinder</RepositoryUrl>
+    <PackageProjectUrl>https://github.com/WildSiteCreations/Our.Community.MediaColourFinder</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/WildSiteCreations/Our.Community.MediaColourFinder</RepositoryUrl>
     <PackageReadmeFile>README_nuget.md</PackageReadmeFile>
     <RepositoryType>git</RepositoryType>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
@@ -30,17 +31,11 @@ You can then use these colours in your website build to enhance your designs.</D
     <PackageReference Include="Umbraco.Cms.Web.BackOffice" Version="10.4.0" />
   </ItemGroup>
 
+ 
   <ItemGroup>
-    <Content Include="App_Plugins\Our.Community.MediaColourFinder\**" ExcludeFromSingleFile="true" CopyToPublishDirectory="Always" />
-    <None Include="buildTransitive\**" Pack="true" PackagePath="buildTransitive" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <None Remove="App_Plugins\Our.Community.MediaColourFinder\backoffice\icons\mediaColourFinder.svg" />
-    <None Remove="App_Plugins\Our.Community.MediaColourFinder\MediaColourFinder.css" />
-    <None Remove="App_Plugins\Our.Community.MediaColourFinder\mediaColourFinder.js" />
-    <None Remove="App_Plugins\Our.Community.MediaColourFinder\mediaColourFinders.html" />
-    <None Remove="App_Plugins\Our.Community.MediaColourFinder\package.manifest" />
+    <None Remove="wwwroot\App_Plugins\Our.Community.MediaColourFinder\backoffice\icons\mediaColourFinder.svg" />
+    <None Remove="wwwroot\App_Plugins\Our.Community.MediaColourFinder\mediaColourFinders.html" />
+    <None Remove="wwwroot\App_Plugins\Our.Community.MediaColourFinder\package.manifest" />
   </ItemGroup>
 
   <ItemGroup>
@@ -52,6 +47,12 @@ You can then use these colours in your website build to enhance your designs.</D
       <Pack>True</Pack>
       <PackagePath>\</PackagePath>
     </None>
+    <None Include="wwwroot\App_Plugins\Our.Community.MediaColourFinder\backoffice\icons\color-circle.svg" />
+    <None Include="wwwroot\App_Plugins\Our.Community.MediaColourFinder\lang\en.xml" />
+    <None Include="wwwroot\App_Plugins\Our.Community.MediaColourFinder\mediaColourFinder.css" />
+    <None Include="wwwroot\App_Plugins\Our.Community.MediaColourFinder\mediaColourFinder.html" />
+    <None Include="wwwroot\App_Plugins\Our.Community.MediaColourFinder\mediaColourFinder.js" />
+    <None Include="wwwroot\App_Plugins\Our.Community.MediaColourFinder\package.manifest_old" />
   </ItemGroup>
 
 </Project>
