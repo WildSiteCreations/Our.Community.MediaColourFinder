@@ -1,8 +1,8 @@
 # Our.Community.MediaColourFinder
 ![color-circle](assets/mediaColourFinder.png)
 
-[![Downloads](https://img.shields.io/nuget/dt/Umbraco.Community.Our.Community.MediaColourFinder?color=cc9900)](https://www.nuget.org/packages/Umbraco.Community.MediaColourFinder/)
-[![NuGet](https://img.shields.io/nuget/vpre/Umbraco.Community.Our.Community.MediaColourFinder?color=0273B3)](https://www.nuget.org/packages/Umbraco.Community.MediaColourFinder/)
+[![Downloads](https://img.shields.io/nuget/dt/Umbraco.Community.MediaColourFinder?color=cc9900)](https://www.nuget.org/packages/Umbraco.Community.MediaColourFinder/)
+[![NuGet](https://img.shields.io/nuget/dt/Umbraco.Community.MediaColourFinder?color=0273B3)](https://www.nuget.org/packages/Umbraco.Community.MediaColourFinder/)
 [![GitHub license](https://img.shields.io/github/license/WildSiteCreations/Our.Community.MediaColourFinder?color=8AB803)](LICENSE)
 
 
