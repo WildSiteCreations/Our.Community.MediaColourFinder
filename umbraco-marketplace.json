@@ -7,7 +7,7 @@
   "Category": "Editor Tools",
   "Description": "This package enables you to use the focal point of an image to obtain its brightest color, average color, and opposite color to the brightest which can then be used in your designs",
   "LicenseTypes": [ "Free" ],
-  "IssueTrackerUrl": "https://github.com/WildSiteCreation/Our.Community.MediaColourFinder/issues",
+  "IssueTrackerUrl": "https://github.com/WildSiteCreations/Our.Community.MediaColourFinder/issues",
   "PackageType": "Package",
   "Tags": [ "Media, Colour Picker, Images, Focal Point" ],
   "Title": "Our.Community.MediaColourFinder"
