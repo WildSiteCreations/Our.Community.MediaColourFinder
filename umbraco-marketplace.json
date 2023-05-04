@@ -1,14 +1,14 @@
 {
-    "$schema": "https://marketplace.umbraco.com/umbraco-marketplace-schema.json", 
-    "AuthorDetails": {
-      "Name": "Owain Williams and Sean Thorne",
-      "ImageUrl": "https://github.com/WildSiteCreation.png"
-    },
-    "Category": "",
-    "Description": "",
-    "LicenseTypes": [ "Free" ],
-    "IssueTrackerUrl": "https://github.com/WildSiteCreation/Our.Community.MediaColourFinder/issues",
-    "PackageType": "Package",
-    "Tags": [],
-    "Title": "Our.Community.MediaColourFinder"
-  }
+  "$schema": "https://marketplace.umbraco.com/umbraco-marketplace-schema.json",
+  "AuthorDetails": {
+    "Name": "Owain Williams and Sean Thorne",
+    "ImageUrl": "https://github.com/WildSiteCreations/Our.Community.MediaColourFinder/blob/main/.github/assets/mediaColourFinder.png"
+  },
+  "Category": "Editor Tools",
+  "Description": "This package enables you to use the focal point of an image to obtain its brightest color, average color, and opposite color to the brightest which can then be used in your designs",
+  "LicenseTypes": [ "Free" ],
+  "IssueTrackerUrl": "https://github.com/WildSiteCreation/Our.Community.MediaColourFinder/issues",
+  "PackageType": "Package",
+  "Tags": [ "Media, Colour Picker, Images, Focal Point" ],
+  "Title": "Our.Community.MediaColourFinder"
+}

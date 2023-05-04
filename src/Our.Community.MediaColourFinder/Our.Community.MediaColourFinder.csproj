@@ -14,7 +14,7 @@ You can then use these colours in your website build to enhance your designs.</D
     <PackageTags>umbraco;umbraco-marketplace;colour-finder;</PackageTags>
     <RootNamespace>Umbraco.Community.MediaColourFinder</RootNamespace>
     <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
-    <Version>0.2.1-beta</Version>
+    <Version>1.0.0</Version>
     <Authors>Owain Williams and Sean Thorne</Authors>
     <Copyright>2023 © Owain Williams and Sean Thorne</Copyright>
     <PackageProjectUrl>https://github.com/WildSiteCreations/Our.Community.MediaColourFinder</PackageProjectUrl>
