@@ -2,7 +2,7 @@
 import { UmbPropertyEditorUiElement } from "@umbraco-cms/backoffice/extension-registry";
 
 @customElement('wsc-colour-finder-property-editor-ui')
-export default class MySuggestionsPropertyEditorUIElement extends LitElement implements UmbPropertyEditorUiElement {
+export default class ColourFinderPropertyEditor extends LitElement implements UmbPropertyEditorUiElement {
     @property({ type: String })
     public value = "";
 
@@ -13,6 +13,6 @@ export default class MySuggestionsPropertyEditorUIElement extends LitElement imp
 
 declare global {
     interface HTMLElementTagNameMap {
-        'wsc-colour-finder-property-editor-ui': MySuggestionsPropertyEditorUIElement;
+        'wsc-colour-finder-property-editor-ui': ColourFinderPropertyEditor;
     }
 }
