@@ -6,7 +6,7 @@ const dashboards: Array<ManifestDashboard> = [
         name: 'WSC.MediaColourFinder',
         alias: 'WSC.MediaColourFinder.dashboard',
         elementName: 'wsc-colour-finder-property-editor-ui',
-        js: ()=> import('./colour-finder-property-editor-ui.js'),
+        js: ()=> import('../index.js'),
         weight: -10,
         meta: {
             label: 'WSC.MediaColourFinder',
