@@ -1,0 +1,11 @@
+{
+    "name": "WSC.MediaColourFinder",
+    "private": "true",
+    "version": "0.1.0",
+    "type": "commonjs",
+    "description": "proxy package.json, so NPM Taskrunner extension in visual studio can find the commands",
+    "scripts": {
+        "build": "cd ./WSC.MediaColourFinder.Client/Assets/ && npm run build",
+        "watch": "cd ./WSC.MediaColourFinder.Client/Assets/ && npm run watch"
+    }
+}

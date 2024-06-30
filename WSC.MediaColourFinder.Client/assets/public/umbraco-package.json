@@ -1,0 +1,23 @@
+{
+    "$schema": "../umbraco-package-schema.json",
+    "name": "WSC.MediaColourFinder",
+    "id": "WSC.MediaColourFinder",
+    "version": "0.1.0",
+    "allowTelemetry": true,
+    "extensions": [
+        {
+            "type": "propertyEditorUi",
+            "alias": "WSC.PropertyEditorUi.ColourFinder",
+            "name": "Colour Finder UI",
+            "element": "/App_Plugins/WSC.MediaColourFinder/assets.js",
+            "elementName": "wsc-colourfinger-property-editor-ui",
+            "meta": {
+                "label": "WSC Colour Finder",
+                "icon": "icon-list",
+                "group": "common",
+                "propertyEditorSchemaAlias": "Umbraco.Plain.String"
+            }
+        }
+        
+    ]
+}

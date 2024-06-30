@@ -1,0 +1,15 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+	<PropertyGroup>
+		<TargetFramework>net8.0</TargetFramework>
+		<ImplicitUsings>enable</ImplicitUsings>
+		<Nullable>enable</Nullable>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<PackageReference Include="Umbraco.Cms.Api.Management" Version="14.0.0" />
+		<PackageReference Include="Umbraco.Cms.Core" Version="14.0.0" />
+		<PackageReference Include="Umbraco.Cms.Imaging.ImageSharp" Version="14.0.0" />
+	</ItemGroup>
+
+</Project>
