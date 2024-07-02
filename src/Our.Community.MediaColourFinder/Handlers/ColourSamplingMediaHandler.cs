@@ -1,5 +1,4 @@
-﻿using Lucene.Net.Queries.Function.ValueSources;
-using Microsoft.Extensions.Logging;
+﻿using Microsoft.Extensions.Logging;
 using Newtonsoft.Json;
 using OurCommunityMediaColourFinder.Interfaces;
 using OurCommunityMediaColourFinder.Models;
