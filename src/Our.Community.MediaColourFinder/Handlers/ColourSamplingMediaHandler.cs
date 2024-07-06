@@ -33,6 +33,15 @@ public class ColourSamplingMediaHandler : INotificationHandler<MediaSavingNotifi
     {
         foreach (IMedia media in notification.SavedEntities)
         {
+            if (media.HasProperty("umbracoExtension"))
+            {
+                if (media.GetValue<string>("umbracoExtension")?.ToLowerInvariant() == "tif" ||
+                    media.GetValue<string>("umbracoExtension")?.ToLowerInvariant() == "tiff")
+                {
+                    continue;
+                }
+            }
+
             IEnumerable<IProperty> properties = media
                 .GetPropertiesByEditor("wsc.mediaColourFinder")
                 .ToList(); // ToList() is important here, otherwise the enumeration will be executed multiple times
