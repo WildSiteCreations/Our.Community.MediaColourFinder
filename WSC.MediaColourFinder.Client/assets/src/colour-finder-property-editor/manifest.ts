@@ -3,8 +3,8 @@ import type { ManifestDashboard } from "@umbraco-cms/backoffice/extension-regist
 const dashboards: Array<ManifestDashboard> = [
     {
         type: 'dashboard',
-        name: 'WSC.MediaColourFinder',
-        alias: 'WSC.MediaColourFinder.dashboard',
+        name: 'wsc.mediacolourfinder',
+        alias: 'WSC.MediaColourFinder',
         elementName: 'wsc-colour-finder-property-editor-ui',
         js: ()=> import('../index.js'),
         weight: -10,

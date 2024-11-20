@@ -1,8 +1,8 @@
-﻿using WSC.MediaColourFinder.Core.Interfaces;
-using WSC.MediaColourFinder.Core.Models;
-using SixLabors.ImageSharp;
+﻿using SixLabors.ImageSharp;
 using SixLabors.ImageSharp.PixelFormats;
 using SixLabors.ImageSharp.Processing;
+using WSC.MediaColourFinder.Core.Interfaces;
+using WSC.MediaColourFinder.Core.Models;
 using Image = SixLabors.ImageSharp.Image;
 
 namespace WSC.MediaColourFinder.Core.Services
@@ -39,6 +39,8 @@ namespace WSC.MediaColourFinder.Core.Services
 				Opposite = InvertColorAndConvertToHex(averageColour.ToHex(), false),
 				TextColour = InvertColorAndConvertToHex(averageColour.ToHex(), true),
 			};
+
+			Console.WriteLine($"Average: {imageWithColour.Average}, Brightest: {imageWithColour.Brightest}, Opposite: {imageWithColour.Opposite}, TextColour: {imageWithColour.TextColour}");
 			return imageWithColour;
 		}
 

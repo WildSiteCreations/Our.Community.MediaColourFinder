@@ -18,40 +18,38 @@ export default class ColourFinderPropertyEditor extends LitElement implements Um
     .colourContainer {
         display: flex;
         justify-content: space-between;
-        gap: 35px
+        gap: 35px;
+        overflow: hidden; /* Clearfix to wrap floated elements */
+
+    }
+    .colourSample {
+        float: left;
+        margin-right: 10px; /* Add some spacing between samples */
+    }
+     #wrapper {
+      margin-top: 10px;
+      display: flex;
+      gap: 10px;
+          clear: both; /* Clear the float to start a new line */
+    }
+    .element {
+      width: 100%;
     }
   `;
 
 
     render() {
         return html` 
-        <div class="colourContainer">
-            <div class="colourSample">
-                <p>Average</p>
-                <div class="patch" style="background-color: #AC439C;">
-                </div>
-                <div>#FFFFFF</div>
-            </div>
-            <div class="colourSample">
-                <p>Brightest</p>
-                <div class="patch">
-                </div>
-                <div>#FFFFFF</div>
-            </div>
-            <div class="colourSample">
-                <p>Opposite</p>
-                <div class="patch">
-                </div>
-                <div>#FFFFFF</div>
-            </div>
-            <div class="colourSample">
-                <p>Text Colour on average</p>
-                <div class="patch">
-                </div>
-                <div>#FFFFFF</div>
-            </div>
-            
-            </div>
+<uui-box>
+    <uui-color-swatch label="Average" show-label="true" value="#d0021b"></uui-color-swatch>
+    <uui-color-swatch label="Brightest" show-label="true" value="#d0021b"></uui-color-swatch>
+    <uui-color-swatch label="Opposite" show-label="true" value="#d0021b"></uui-color-swatch>
+    <uui-color-swatch label="Text" show-label="true" value="#d0021b"></uui-color-swatch>
+    <div id="wrapper">
+       <uui-button label="Update Colours" look="primary">Update colours</uui-button>
+    </div>
+   </uui-box>
+
             `
     }
 }

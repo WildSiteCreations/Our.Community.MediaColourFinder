@@ -28,14 +28,16 @@ namespace WSC.MediaColourFinder.Core.Handlers
 		{
 			foreach (IMedia media in notification.SavedEntities)
 			{
-				IEnumerable<IProperty> properties = media
-					.GetPropertiesByEditor("wsc.mediaColourFinder")
-					.ToList(); // ToList() is important here, otherwise the enumeration will be executed multiple times
 
-				if (!properties.Any())
-				{
-					continue;
-				}
+				const string customPropertyAlias = "WSC.PropertyEditorUi.ColourFinder";
+
+				//Find the custom property on the media item
+				//This is always 0 for some reason
+
+				IEnumerable<IProperty> properties = media
+					.GetPropertiesByEditor(customPropertyAlias)
+					.ToList();
+
 
 				ImageWithColour? imagesWithColour = await ExtractColoursAsync(media);
 
